@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stranded Prepositions + Personal Brand · Speaking · Caroline</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0d0b09;--ink2:#35302a;--ink3:#7a7468;
+  --bg:#f8f5f0;--s2:#ede9e0;--s3:#ddd8cc;
+  --acc:#1a6a52;--al:#e5f2ed;
+  --ok:#1a6248;--okl:#e2f2eb;
+  --warn:#7a5800;--warnl:#fff8e1;
+  --err:#9a1a1a;--errl:#fceaea;
+  --serif:"DM Serif Display",Georgia,serif;
+  --sans:"DM Sans",system-ui,sans-serif;
+}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);margin:0;line-height:1.7}
+.hero{background:var(--ink);padding:2.2rem 2rem 1.8rem;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(26,106,82,.1);pointer-events:none}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1}
+.ey{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,106,82,.7);margin-bottom:.4rem}
+.h1{font-family:var(--serif);font-size:clamp(1.7rem,4.5vw,2.5rem);color:white;line-height:1.1;margin-bottom:.5rem}
+.h1 em{font-style:italic;color:#7fdbc4}
+.sub{font-size:13px;color:rgba(255,255,255,.4);max-width:520px;line-height:1.6}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:.8rem}
+.pill{font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;background:rgba(26,106,82,.2);color:#7fdbc4}
+.nav{background:var(--ink);border-top:1px solid rgba(255,255,255,.07);position:sticky;top:0;z-index:100}
+.nw{max-width:860px;margin:0 auto;display:flex;overflow-x:auto;padding:0 2rem}
+.tab{font-family:var(--sans);font-size:12px;font-weight:500;padding:.8rem 13px;border:none;background:transparent;color:rgba(255,255,255,.35);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .15s}
+.tab:hover{color:rgba(255,255,255,.7)}
+.tab.on{color:white;border-bottom-color:var(--acc)}
+.page{display:none;max-width:860px;margin:0 auto;padding:2.2rem 1.5rem 5rem}
+.page.on{display:block}
+.sl{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+.sl::after{content:"";flex:1;height:.5px;background:var(--s3)}
+
+/* Reference */
+.ref-strip{background:white;border:1px solid var(--s3);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1.5rem}
+.ref-title{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);margin-bottom:.8rem}
+.ref-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--s2)}
+.ref-row:last-child{border-bottom:none}
+.ref-q{font-size:13px;color:var(--ink2)}
+.ref-q strong{color:var(--err)}
+.ref-arr{font-size:16px;color:var(--s3)}
+.ref-a{font-size:13px;color:var(--ink2)}
+.ref-a strong{color:var(--acc)}
+.ref-pattern{background:var(--bg);border-radius:10px;padding:.9rem 1.1rem;margin-top:1rem;font-size:13px;color:var(--ink2);border:1px solid var(--s2)}
+.ref-pattern p{margin-bottom:.35rem;line-height:1.5}
+.ref-pattern em{color:var(--acc);font-style:normal;font-weight:600}
+.ref-pattern .prep{display:inline-block;background:var(--al);color:var(--acc);font-weight:700;font-size:12px;padding:1px 7px;border-radius:4px;margin-left:2px}
+
+/* Tips */
+.tips-box{background:var(--warnl);border:1px solid rgba(122,88,0,.15);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:1.5rem}
+.tips-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--warn);margin-bottom:.45rem}
+.tips-list{padding-left:15px;font-size:12.5px;color:#5a4000;line-height:1.8}
+
+/* Progress */
+.prog-row{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem}
+.prog-bar{flex:1;background:var(--s3);border-radius:100px;height:4px;overflow:hidden}
+.prog-fill{height:100%;background:var(--acc);border-radius:100px;width:0%;transition:width .5s}
+.prog-txt{font-size:11px;color:var(--ink3);white-space:nowrap}
+
+/* Speaking cards */
+.scard{background:white;border:1.5px solid var(--s3);border-radius:14px;margin-bottom:1.3rem;overflow:hidden}
+.scard-head{background:var(--s2);padding:6px 14px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--s3)}
+.scard-tag{font-size:10px;font-weight:600;padding:2px 9px;border-radius:100px;background:var(--al);color:var(--acc)}
+.scard-body{padding:1.1rem 1.4rem}
+.question-box{background:var(--bg);border-left:3px solid var(--acc);border-radius:0 9px 9px 0;padding:.8rem 1rem;margin-bottom:.9rem}
+.question-box .q-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:.3rem}
+.question-box .q-text{font-size:15px;font-weight:500;color:var(--ink);line-height:1.5}
+.question-box .q-text .prep{display:inline-block;background:var(--errl);color:var(--err);font-weight:700;padding:0 5px;border-radius:4px}
+.scard-ctx{font-size:12px;color:var(--ink3);font-style:italic;padding:5px 10px;background:var(--bg);border-radius:7px;border-left:2px solid var(--s3);margin-bottom:.9rem}
+.scard-bottom{padding:.9rem 1.4rem;background:var(--bg);border-top:1px solid var(--s3);display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}
+.starters-wrap{flex:1;min-width:200px}
+.starters-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:.5rem}
+.starters{display:flex;flex-wrap:wrap;gap:5px}
+.starter{font-size:11.5px;padding:4px 11px;border-radius:100px;background:white;border:1px solid var(--s3);color:var(--ink2)}
+.starter em{color:var(--acc);font-style:normal;font-weight:700}
+.notes-wrap{flex:1;min-width:160px}
+.notes-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:.5rem}
+.notes-input{width:100%;font-family:var(--sans);font-size:13px;color:var(--ink2);background:white;border:1.5px solid var(--s3);border-radius:8px;padding:8px 10px;resize:none;line-height:1.5}
+.notes-input:focus{outline:none;border-color:var(--acc)}
+.timer-wrap{display:flex;flex-direction:column;align-items:center;gap:5px;flex-shrink:0}
+.timer-ring{position:relative;width:72px;height:72px}
+.timer-ring svg{transform:rotate(-90deg)}
+.ring-bg{fill:none;stroke:var(--s3);stroke-width:5}
+.ring-fg{fill:none;stroke:var(--acc);stroke-width:5;stroke-linecap:round;transition:stroke-dashoffset .9s linear, stroke .3s}
+.timer-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:17px;font-weight:700;color:var(--ink2)}
+.timer-btn{font-family:var(--sans);font-size:11px;font-weight:600;padding:4px 14px;border-radius:100px;border:1.5px solid var(--s3);background:white;color:var(--ink2);cursor:pointer;transition:all .12s;white-space:nowrap}
+.timer-btn:hover{background:var(--al);border-color:var(--acc);color:var(--acc)}
+.timer-btn.running{background:var(--errl);border-color:var(--err);color:var(--err)}
+.timer-btn.done{background:var(--okl);border-color:var(--ok);color:var(--ok)}
+.vocab-hint{display:flex;flex-wrap:wrap;gap:5px;margin:.7rem 1.4rem .3rem}
+.vh-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-right:3px;align-self:center}
+.vh-chip{font-size:11.5px;padding:3px 10px;border-radius:100px;background:var(--al);color:var(--acc);font-weight:600;border:1px solid rgba(26,106,82,.15)}
+
+footer{border-top:1px solid var(--s3);padding:1.1rem 1.5rem;font-size:11px;color:var(--ink3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;max-width:860px;margin:0 auto}
+@media(max-width:600px){.nw{padding:0 .75rem}.tab{font-size:11px;padding:.75rem 10px}.scard-bottom{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <p class="ey">C1 &middot; Stranded Prepositions + Personal Brand &middot; Speaking &middot; Caroline</p>
+    <h1 class="h1">Preposicao no <em>final.</em></h1>
+    <p class="sub">Speaking com preposicoes deslocadas ao final da frase e vocabulario de personal brand. Contexto: marketing corporativo, JDE Peet&rsquo;s.</p>
+    <div class="pills">
+      <span class="pill">What is she known <strong>for</strong>?</span>
+      <span class="pill">What does she align her work <strong>with</strong>?</span>
+      <span class="pill">What does she differentiate herself <strong>by</strong>?</span>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nw">
+    <button class="tab on" onclick="go('t1',this)">Referencia</button>
+    <button class="tab" onclick="go('t2',this)">Warm-up</button>
+    <button class="tab" onclick="go('t3',this)">Situacoes reais</button>
+  </div>
+</nav>
+
+<!-- ========================== TAB 1 Referencia -->
+<div class="page on" id="t1">
+  <p class="sl">O padrao</p>
+  <div class="ref-strip">
+    <p class="ref-title">Como funciona: preposicao fica no final da pergunta ou da frase</p>
+    <div class="ref-pattern">
+      <p>Nas collocations de personal brand, a preposicao faz parte da estrutura do verbo. Quando essa expressao vira uma pergunta ou uma frase relativa, a preposicao <em>vai para o final</em> &mdash; ela nao sai da frase.</p>
+      <p style="margin-top:.6rem"><strong>Padrao pergunta:</strong>&nbsp; <em>What</em> / <em>Who</em> + aux + sujeito + verbo <span class="prep">prep</span>?</p>
+      <p><strong>Padrao frase relativa:</strong>&nbsp; &ldquo;That is what/who + sujeito + verbo <span class="prep">prep</span>.&rdquo;</p>
+    </div>
+  </div>
+
+  <p class="sl">Exemplos por collocation</p>
+  <div class="ref-strip">
+    <p class="ref-title">Pergunta &rarr; Resposta com preposicao no final</p>
+
+    <div class="ref-row">
+      <div class="ref-q">What does she communicate her value <strong>by</strong>?</div>
+      <div class="ref-arr">&rarr;</div>
+      <div class="ref-a">Sharing clear results is what she communicates her value <strong>by</strong>.</div>
+    </div>
+    <div class="ref-row">
+      <div class="ref-q">What is her reputation shaped <strong>through</strong>?</div>
+      <div class="ref-arr">&rarr;</div>
+      <div class="ref-a">Consistent delivery is what her reputation is shaped <strong>through</strong>.</div>
+    </div>
+    <div class="ref-row">
+      <div class="ref-q">What does she align her work <strong>with</strong>?</div>
+      <div class="ref-arr">&rarr;</div>
+      <div class="ref-a">Brand strategy is what she aligns her work <strong>with</strong>.</div>
+    </div>
+    <div class="ref-row">
+      <div class="ref-q">What does she build trust <strong>by</strong>?</div>
+      <div class="ref-arr">&rarr;</div>
+      <div class="ref-a">Keeping promises is what she builds trust <strong>by</strong>.</div>
+    </div>
+    <div class="ref-row">
+      <div class="ref-q">Who does she cultivate connections <strong>with</strong>?</div>
+      <div class="ref-arr">&rarr;</div>
+      <div class="ref-a">Key stakeholders are who she cultivates connections <strong>with</strong>.</div>
+    </div>
+    <div class="ref-row">
+      <div class="ref-q">What does she differentiate herself <strong>by</strong>?</div>
+      <div class="ref-arr">&rarr;</div>
+      <div class="ref-a">Her cross-brand thinking is what she differentiates herself <strong>by</strong>.</div>
+    </div>
+    <div class="ref-row">
+      <div class="ref-q">What is she known <strong>for</strong>?</div>
+      <div class="ref-arr">&rarr;</div>
+      <div class="ref-a">Her portfolio expertise is what she is known <strong>for</strong>.</div>
+    </div>
+    <div class="ref-row">
+      <div class="ref-q">What does she establish her brand <strong>by</strong>?</div>
+      <div class="ref-arr">&rarr;</div>
+      <div class="ref-a">Her track record is what she establishes her brand <strong>by</strong>.</div>
+    </div>
+  </div>
+
+  <div class="tips-box">
+    <p class="tips-title">Regra de ouro</p>
+    <ul class="tips-list">
+      <li>A preposicao pertence ao verbo &mdash; ela nao pode desaparecer. <em>That is what she is known.</em> &larr; ERRADO. Falta <strong>for</strong>.</li>
+      <li>Perguntas informais: a preposicao vai pro final. <em>What is she known for?</em> &larr; natural.</li>
+      <li>Respostas com frase relativa: <em>&ldquo;That is what / who&hellip;&rdquo;</em> + preposicao no final.</li>
+    </ul>
+  </div>
+
+  <div style="text-align:center;padding:1rem 0">
+    <button onclick="go('t2', document.querySelectorAll('.tab')[1])" style="font-family:var(--sans);font-size:13px;font-weight:600;padding:10px 28px;border-radius:100px;border:none;background:var(--acc);color:white;cursor:pointer">Comecar o speaking &rarr;</button>
+  </div>
+</div>
+
+<!-- ========================== TAB 2 Warm-up -->
+<div class="page" id="t2">
+  <div class="tips-box">
+    <p class="tips-title">Warm-up &mdash; 30 segundos</p>
+    <ul class="tips-list">
+      <li>Leia a pergunta em voz alta primeiro &mdash; note a preposicao no final.</li>
+      <li>Responda usando o padrao: <em>&ldquo;___ is what I ___ <strong>[prep]</strong>.&rdquo;</em></li>
+      <li>Tente estender a resposta com pelo menos mais uma frase.</li>
+    </ul>
+  </div>
+
+  <div class="prog-row"><div class="prog-bar"><div class="prog-fill" id="pf2"></div></div><span class="prog-txt" id="pl2">0 / 4</span></div>
+  <p class="sl">Responda as perguntas &mdash; preposicao no final</p>
+
+  <!-- W1 -->
+  <div class="scard">
+    <div class="scard-head"><span>Pergunta 1</span><span class="scard-tag">30s</span></div>
+    <div class="scard-body">
+      <div class="question-box">
+        <p class="q-label">Responda sobre voce</p>
+        <p class="q-text">What do you communicate your value <span class="prep">by</span>?</p>
+      </div>
+    </div>
+    <div class="vocab-hint">
+      <span class="vh-label">Modelo de resposta:</span>
+      <span class="vh-chip">___ is what I communicate my value by.</span>
+    </div>
+    <div class="scard-bottom">
+      <div class="starters-wrap">
+        <p class="starters-label">Sentence starters</p>
+        <div class="starters">
+          <span class="starter">Sharing results is what I communicate my value <em>by</em>.</span>
+          <span class="starter">That&rsquo;s what I&rsquo;ve always communicated my value <em>by</em>.</span>
+          <span class="starter">Translating data is what I do it <em>by</em>.</span>
+        </div>
+      </div>
+      <div class="notes-wrap">
+        <p class="notes-label">Palavras-chave</p>
+        <textarea class="notes-input" rows="2" placeholder="Ex: cross-profit, brand strategy..."></textarea>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer-ring">
+          <svg width="72" height="72" viewBox="0 0 72 72">
+            <circle class="ring-bg" cx="36" cy="36" r="30"/>
+            <circle class="ring-fg" id="ring-t2-1" cx="36" cy="36" r="30" stroke-dasharray="188.5" stroke-dashoffset="0"/>
+          </svg>
+          <div class="timer-num" id="num-t2-1">30</div>
+        </div>
+        <button class="timer-btn" id="btn-t2-1" onclick="startTimer('t2-1',30,'pf2','pl2',4)">Iniciar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- W2 -->
+  <div class="scard">
+    <div class="scard-head"><span>Pergunta 2</span><span class="scard-tag">30s</span></div>
+    <div class="scard-body">
+      <div class="question-box">
+        <p class="q-label">Responda sobre voce</p>
+        <p class="q-text">What is your professional reputation shaped <span class="prep">through</span>?</p>
+      </div>
+    </div>
+    <div class="vocab-hint">
+      <span class="vh-label">Modelo:</span>
+      <span class="vh-chip">___ is what my reputation is shaped through.</span>
+    </div>
+    <div class="scard-bottom">
+      <div class="starters-wrap">
+        <p class="starters-label">Sentence starters</p>
+        <div class="starters">
+          <span class="starter">Consistency is what my reputation is shaped <em>through</em>.</span>
+          <span class="starter">That&rsquo;s what I&rsquo;ve been building it <em>through</em>.</span>
+          <span class="starter">Multi-brand expertise is what it is shaped <em>through</em>.</span>
+        </div>
+      </div>
+      <div class="notes-wrap">
+        <p class="notes-label">Palavras-chave</p>
+        <textarea class="notes-input" rows="2" placeholder="Ex: portfolio thinking, results, delivery..."></textarea>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer-ring">
+          <svg width="72" height="72" viewBox="0 0 72 72">
+            <circle class="ring-bg" cx="36" cy="36" r="30"/>
+            <circle class="ring-fg" id="ring-t2-2" cx="36" cy="36" r="30" stroke-dasharray="188.5" stroke-dashoffset="0"/>
+          </svg>
+          <div class="timer-num" id="num-t2-2">30</div>
+        </div>
+        <button class="timer-btn" id="btn-t2-2" onclick="startTimer('t2-2',30,'pf2','pl2',4)">Iniciar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- W3 -->
+  <div class="scard">
+    <div class="scard-head"><span>Pergunta 3</span><span class="scard-tag">30s</span></div>
+    <div class="scard-body">
+      <div class="question-box">
+        <p class="q-label">Responda sobre voce</p>
+        <p class="q-text">Who do you most need to cultivate connections <span class="prep">with</span> in your role right now?</p>
+      </div>
+    </div>
+    <div class="vocab-hint">
+      <span class="vh-label">Modelo:</span>
+      <span class="vh-chip">___ is who I most need to cultivate connections with.</span>
+    </div>
+    <div class="scard-bottom">
+      <div class="starters-wrap">
+        <p class="starters-label">Sentence starters</p>
+        <div class="starters">
+          <span class="starter">David is someone I&rsquo;m investing in cultivating connections <em>with</em>.</span>
+          <span class="starter">The analytics team is who I need to build more trust <em>with</em>.</span>
+          <span class="starter">That&rsquo;s who I&rsquo;ve been focusing on networking <em>with</em>.</span>
+        </div>
+      </div>
+      <div class="notes-wrap">
+        <p class="notes-label">Palavras-chave</p>
+        <textarea class="notes-input" rows="2" placeholder="Ex: David, Priya, supply chain, HQ..."></textarea>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer-ring">
+          <svg width="72" height="72" viewBox="0 0 72 72">
+            <circle class="ring-bg" cx="36" cy="36" r="30"/>
+            <circle class="ring-fg" id="ring-t2-3" cx="36" cy="36" r="30" stroke-dasharray="188.5" stroke-dashoffset="0"/>
+          </svg>
+          <div class="timer-num" id="num-t2-3">30</div>
+        </div>
+        <button class="timer-btn" id="btn-t2-3" onclick="startTimer('t2-3',30,'pf2','pl2',4)">Iniciar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- W4 -->
+  <div class="scard">
+    <div class="scard-head"><span>Pergunta 4</span><span class="scard-tag">30s</span></div>
+    <div class="scard-body">
+      <div class="question-box">
+        <p class="q-label">Responda sobre voce</p>
+        <p class="q-text">What do you differentiate yourself <span class="prep">by</span> compared to others in your field?</p>
+      </div>
+    </div>
+    <div class="vocab-hint">
+      <span class="vh-label">Modelo:</span>
+      <span class="vh-chip">___ is what I differentiate myself by.</span>
+    </div>
+    <div class="scard-bottom">
+      <div class="starters-wrap">
+        <p class="starters-label">Sentence starters</p>
+        <div class="starters">
+          <span class="starter">My cross-brand view is what I differentiate myself <em>by</em>.</span>
+          <span class="starter">That&rsquo;s exactly what I&rsquo;m known <em>for</em> &mdash; and what I stand out <em>by</em>.</span>
+          <span class="starter">Understanding regional brand identity is what I do it <em>by</em>.</span>
+        </div>
+      </div>
+      <div class="notes-wrap">
+        <p class="notes-label">Palavras-chave</p>
+        <textarea class="notes-input" rows="2" placeholder="Ex: Pilao vs Caboclo, commodity lens..."></textarea>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer-ring">
+          <svg width="72" height="72" viewBox="0 0 72 72">
+            <circle class="ring-bg" cx="36" cy="36" r="30"/>
+            <circle class="ring-fg" id="ring-t2-4" cx="36" cy="36" r="30" stroke-dasharray="188.5" stroke-dashoffset="0"/>
+          </svg>
+          <div class="timer-num" id="num-t2-4">30</div>
+        </div>
+        <button class="timer-btn" id="btn-t2-4" onclick="startTimer('t2-4',30,'pf2','pl2',4)">Iniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================== TAB 3 Situacoes reais -->
+<div class="page" id="t3">
+  <div class="tips-box">
+    <p class="tips-title">Situacoes reais &mdash; 60 segundos</p>
+    <ul class="tips-list">
+      <li>Cada situacao tem uma pergunta com a preposicao no final. Responda usando o mesmo padrao.</li>
+      <li>Tente incluir <strong>pelo menos duas</strong> preposicoes deslocadas na sua resposta.</li>
+      <li>Contexto: JDE Peet&rsquo;s &mdash; fale sobre Pilao, Caboclo, David, Priya quando fizer sentido.</li>
+    </ul>
+  </div>
+
+  <div class="prog-row"><div class="prog-bar"><div class="prog-fill" id="pf3"></div></div><span class="prog-txt" id="pl3">0 / 4</span></div>
+  <p class="sl">Situacoes &mdash; responda com preposicao no final</p>
+
+  <!-- S1 -->
+  <div class="scard">
+    <div class="scard-head"><span>Situacao 1</span><span class="scard-tag">60s</span></div>
+    <div class="scard-body">
+      <div class="question-box">
+        <p class="q-label">David (Londres) pergunta na call:</p>
+        <p class="q-text">&ldquo;Caroline, I&rsquo;ve heard great things about you. What is your marketing approach here in Brazil known <span class="prep">for</span>?&rdquo;</p>
+      </div>
+      <p class="scard-ctx">Contexto: primeira call de alinhamento com David. Voce tem 60 segundos para apresentar sua abordagem de forma memoravel.</p>
+    </div>
+    <div class="vocab-hint">
+      <span class="vh-label">Use no final:</span>
+      <span class="vh-chip">known for</span>
+      <span class="vh-chip">differentiate by</span>
+      <span class="vh-chip">build trust by</span>
+    </div>
+    <div class="scard-bottom">
+      <div class="starters-wrap">
+        <p class="starters-label">Sentence starters</p>
+        <div class="starters">
+          <span class="starter">What we&rsquo;re known <em>for</em> is&hellip;</span>
+          <span class="starter">That&rsquo;s something we differentiate ourselves <em>by</em>&hellip;</span>
+          <span class="starter">Protecting regional identity is what we&rsquo;re known <em>for</em>.</span>
+          <span class="starter">It&rsquo;s also what we build trust <em>by</em> &mdash; with consumers and with the business.</span>
+        </div>
+      </div>
+      <div class="notes-wrap">
+        <p class="notes-label">Palavras-chave</p>
+        <textarea class="notes-input" rows="2" placeholder="Ex: brand equity, regional identity, Pilao, Caboclo..."></textarea>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer-ring">
+          <svg width="72" height="72" viewBox="0 0 72 72">
+            <circle class="ring-bg" cx="36" cy="36" r="30"/>
+            <circle class="ring-fg" id="ring-t3-1" cx="36" cy="36" r="30" stroke-dasharray="188.5" stroke-dashoffset="0"/>
+          </svg>
+          <div class="timer-num" id="num-t3-1">60</div>
+        </div>
+        <button class="timer-btn" id="btn-t3-1" onclick="startTimer('t3-1',60,'pf3','pl3',4)">Iniciar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2 -->
+  <div class="scard">
+    <div class="scard-head"><span>Situacao 2</span><span class="scard-tag">60s</span></div>
+    <div class="scard-body">
+      <div class="question-box">
+        <p class="q-label">Colega de finance pergunta:</p>
+        <p class="q-text">&ldquo;I always hear about your work from other teams. What exactly is your strategy aligned <span class="prep">with</span>? And what are the brand results shaped <span class="prep">through</span>?&rdquo;</p>
+      </div>
+      <p class="scard-ctx">Contexto: reuniao de resultados Q3. O colega de finance quer entender como marketing justifica o investimento em marcas regionais.</p>
+    </div>
+    <div class="vocab-hint">
+      <span class="vh-label">Use no final:</span>
+      <span class="vh-chip">aligned with</span>
+      <span class="vh-chip">shaped through</span>
+      <span class="vh-chip">communicate by</span>
+    </div>
+    <div class="scard-bottom">
+      <div class="starters-wrap">
+        <p class="starters-label">Sentence starters</p>
+        <div class="starters">
+          <span class="starter">Long-term brand equity is what our strategy is aligned <em>with</em>.</span>
+          <span class="starter">Consumer loyalty is what our results are shaped <em>through</em>.</span>
+          <span class="starter">And that&rsquo;s what we communicate our value <em>by</em> &mdash; to the business.</span>
+        </div>
+      </div>
+      <div class="notes-wrap">
+        <p class="notes-label">Palavras-chave</p>
+        <textarea class="notes-input" rows="2" placeholder="Ex: ROI, brand equity, consumer loyalty..."></textarea>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer-ring">
+          <svg width="72" height="72" viewBox="0 0 72 72">
+            <circle class="ring-bg" cx="36" cy="36" r="30"/>
+            <circle class="ring-fg" id="ring-t3-2" cx="36" cy="36" r="30" stroke-dasharray="188.5" stroke-dashoffset="0"/>
+          </svg>
+          <div class="timer-num" id="num-t3-2">60</div>
+        </div>
+        <button class="timer-btn" id="btn-t3-2" onclick="startTimer('t3-2',60,'pf3','pl3',4)">Iniciar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3 -->
+  <div class="scard">
+    <div class="scard-head"><span>Situacao 3</span><span class="scard-tag">60s</span></div>
+    <div class="scard-body">
+      <div class="question-box">
+        <p class="q-label">Priya (Mumbai) pergunta numa apresentacao:</p>
+        <p class="q-text">&ldquo;Your team&rsquo;s results in Brazil are impressive. What is the trust you have with local retailers built <span class="prep">by</span>? And who is your local brand equity really cultivated <span class="prep">with</span>?&rdquo;</p>
+      </div>
+      <p class="scard-ctx">Contexto: apresentacao de estrategia para o time de analytics da Asia. Priya esta avaliando modelos que outras regioes podem adotar.</p>
+    </div>
+    <div class="vocab-hint">
+      <span class="vh-label">Use no final:</span>
+      <span class="vh-chip">built by</span>
+      <span class="vh-chip">cultivated with</span>
+      <span class="vh-chip">differentiate by</span>
+    </div>
+    <div class="scard-bottom">
+      <div class="starters-wrap">
+        <p class="starters-label">Sentence starters</p>
+        <div class="starters">
+          <span class="starter">It&rsquo;s built <em>by</em> respecting the brand&rsquo;s regional roots.</span>
+          <span class="starter">Local retailers are who we cultivate equity <em>with</em> first.</span>
+          <span class="starter">And that&rsquo;s what we differentiate Pilao from national brands <em>by</em>.</span>
+        </div>
+      </div>
+      <div class="notes-wrap">
+        <p class="notes-label">Palavras-chave</p>
+        <textarea class="notes-input" rows="2" placeholder="Ex: local retailers, community, brand roots..."></textarea>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer-ring">
+          <svg width="72" height="72" viewBox="0 0 72 72">
+            <circle class="ring-bg" cx="36" cy="36" r="30"/>
+            <circle class="ring-fg" id="ring-t3-3" cx="36" cy="36" r="30" stroke-dasharray="188.5" stroke-dashoffset="0"/>
+          </svg>
+          <div class="timer-num" id="num-t3-3">60</div>
+        </div>
+        <button class="timer-btn" id="btn-t3-3" onclick="startTimer('t3-3',60,'pf3','pl3',4)">Iniciar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- S4 -->
+  <div class="scard">
+    <div class="scard-head"><span>Situacao 4</span><span class="scard-tag">60s</span></div>
+    <div class="scard-body">
+      <div class="question-box">
+        <p class="q-label">Gerente pergunta em sua avaliacao de desempenho:</p>
+        <p class="q-text">&ldquo;Caroline, thinking about your own professional growth &mdash; what is the narrative you want to be known <span class="prep">for</span>? And what is your career trajectory aligned <span class="prep">with</span>?&rdquo;</p>
+      </div>
+      <p class="scard-ctx">Contexto: performance review anual. Oportunidade de articular seu personal brand interno de forma clara e estrategica.</p>
+    </div>
+    <div class="vocab-hint">
+      <span class="vh-label">Use no final:</span>
+      <span class="vh-chip">known for</span>
+      <span class="vh-chip">aligned with</span>
+      <span class="vh-chip">establish by</span>
+    </div>
+    <div class="scard-bottom">
+      <div class="starters-wrap">
+        <p class="starters-label">Sentence starters</p>
+        <div class="starters">
+          <span class="starter">What I want to be known <em>for</em> is&hellip;</span>
+          <span class="starter">My growth is aligned <em>with</em> building expertise in&hellip;</span>
+          <span class="starter">That&rsquo;s what I am establishing my brand <em>by</em> &mdash; step by step.</span>
+          <span class="starter">It&rsquo;s a narrative I&rsquo;m creating <em>by</em> taking on&hellip;</span>
+        </div>
+      </div>
+      <div class="notes-wrap">
+        <p class="notes-label">Palavras-chave</p>
+        <textarea class="notes-input" rows="2" placeholder="Ex: global marketing, portfolio strategy, leadership..."></textarea>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer-ring">
+          <svg width="72" height="72" viewBox="0 0 72 72">
+            <circle class="ring-bg" cx="36" cy="36" r="30"/>
+            <circle class="ring-fg" id="ring-t3-4" cx="36" cy="36" r="30" stroke-dasharray="188.5" stroke-dashoffset="0"/>
+          </svg>
+          <div class="timer-num" id="num-t3-4">60</div>
+        </div>
+        <button class="timer-btn" id="btn-t3-4" onclick="startTimer('t3-4',60,'pf3','pl3',4)">Iniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>Stranded Prepositions + Personal Brand &middot; Speaking &middot; Caroline</span>
+  <span>known for &middot; aligned with &middot; differentiate by &middot; shaped through &middot; cultivated with &middot; built by</span>
+</footer>
+
+<script>
+function go(id, btn) {
+  document.querySelectorAll(".page").forEach(function(p){ p.classList.remove("on"); });
+  document.querySelectorAll(".tab").forEach(function(b){ b.classList.remove("on"); });
+  document.getElementById(id).classList.add("on");
+  btn.classList.add("on");
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+var timers = {};
+var completed = {};
+
+function startTimer(id, total, pfId, plId, total_cards) {
+  var btn = document.getElementById("btn-" + id);
+  var num = document.getElementById("num-" + id);
+  var ring = document.getElementById("ring-" + id);
+  var circ = 188.5;
+
+  if (timers[id]) {
+    clearInterval(timers[id]);
+    timers[id] = null;
+    btn.className = "timer-btn";
+    btn.textContent = "Iniciar";
+    num.textContent = total;
+    ring.style.strokeDashoffset = "0";
+    ring.style.stroke = "var(--acc)";
+    return;
+  }
+
+  var remaining = total;
+  btn.className = "timer-btn running";
+  btn.textContent = "Parar";
+
+  timers[id] = setInterval(function() {
+    remaining--;
+    if (remaining <= 0) {
+      clearInterval(timers[id]);
+      timers[id] = null;
+      num.textContent = "0";
+      ring.style.strokeDashoffset = circ.toString();
+      ring.style.stroke = "var(--ok)";
+      btn.className = "timer-btn done";
+      btn.textContent = "Feito";
+      if (!completed[id]) {
+        completed[id] = true;
+        var tabKey = pfId.replace("pf","t");
+        var done = Object.keys(completed).filter(function(k){ return k.indexOf(tabKey + "-") === 0; }).length;
+        document.getElementById(pfId).style.width = Math.round(done / total_cards * 100) + "%";
+        document.getElementById(plId).textContent = done + " / " + total_cards;
+      }
+      return;
+    }
+    num.textContent = remaining;
+    ring.style.strokeDashoffset = (circ * (1 - remaining / total)).toString();
+    if (remaining <= 10) { ring.style.stroke = "var(--err)"; }
+  }, 1000);
+}
+</script>
+</body>
+</html>
